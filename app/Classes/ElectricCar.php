@@ -12,9 +12,9 @@ class ElectricCar extends Car implements Drivable, Flyable
 
     public float $battery_capacity;
 
-    public function __construct(string $brand, string $color, float $engine, float $battery_capacity = 5)
+    public function __construct(int $id, string $brand, string $color, float $engine, float $battery_capacity = 5)
     {
-        parent::__construct($brand, $color, $engine);
+        parent::__construct($id, $brand, $color, $engine);
 
         $this->battery_capacity = $battery_capacity;
     }
@@ -37,4 +37,8 @@ class ElectricCar extends Car implements Drivable, Flyable
         return "Shutting Down!";
     }
 
+    public function fly()
+    {
+        return "Fly";
+    }
 }

@@ -4,14 +4,16 @@ namespace App\Classes;
 
 abstract class Car
 {
+    public int $id;
     public string $brand;
     protected string $color;
     private float $engine;
 
     public static int $NUMBER_OF_TIRES = 4;
 
-    public function __construct(string $brand, string $color, float $engine)
+    public function __construct(int $id, string $brand, string $color, float $engine)
     {
+        $this->id = $id;
         $this->brand = $brand;
         $this->color = $color;
         $this->engine = $engine;
