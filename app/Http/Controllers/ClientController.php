@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Classes\Client;
+use App\Classes\Employ;
 use App\Http\Requests\clients\GetClientsRequest;
 use App\Http\Requests\clients\StoreClientRequest;
 use App\Http\Requests\clients\UpdateClientRequest;
+use App\Notifications\WelcomeNotification;
 use Illuminate\Http\JsonResponse;
 
 class ClientController extends Controller
@@ -50,6 +52,16 @@ class ClientController extends Controller
 
         if (isset($payload['roles']))
             $client->assignRoles($payload['roles']);
+
+//        $employ = new Employ(
+//            $payload['first_name'],
+//            $payload['last_name'],
+//            $payload['email'],
+//            'Software'
+//        );
+
+        $client->notify(new WelcomeNotification());
+//        $employ->notify(new WelcomeNotification());
 
         return response()->json([
             'client' => $client

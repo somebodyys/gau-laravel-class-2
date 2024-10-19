@@ -3,10 +3,11 @@
 namespace App\Classes;
 
 use App\Traits\HasRoles;
+use Illuminate\Notifications\Notifiable;
 
 class Client
 {
-    use HasRoles;
+    use HasRoles, Notifiable;
 
     public string $first_name;
     public string $last_name;
