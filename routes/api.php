@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\HelloWorldController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('external')->group(function (){
@@ -18,3 +19,6 @@ Route::prefix('internal')->group(function (){
         'clients' => ClientController::class
     ]);
 });
+
+
+Route::get('/hello-world', HelloWorldController::class);
