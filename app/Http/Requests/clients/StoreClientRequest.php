@@ -36,7 +36,7 @@ class StoreClientRequest extends FormRequest
     {
         $this->merge([
             'email' => strtolower($this->first_name) . '.' . strtolower($this->last_name) . '@' . strtolower($this->company) . '.com',
-            'roles' => array_merge($this->roles, ['Basic'])
+            'roles' => array_merge($this->roles ?? [], ['Basic'])
         ]);
     }
 
