@@ -13,6 +13,7 @@ class Client
     public string $last_name;
     public string $email;
     public string $company;
+    public string $introduction;
 
     public function __construct(string $first_name, string $last_name, string $email, string $company)
     {
