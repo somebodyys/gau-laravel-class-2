@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\HelloWorldController;
+use App\Http\Controllers\PlantController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -49,3 +50,5 @@ Route::prefix('admin')->group(function (){
         ]);
     });
 });
+
+Route::get('/plants/{plant}', [PlantController::class, 'show']);
